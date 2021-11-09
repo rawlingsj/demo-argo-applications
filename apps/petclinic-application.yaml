@@ -3,17 +3,15 @@ kind: Application
 metadata:
   name: spring-petclinic
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc
     namespace: default
+    server: https://kubernetes.default.svc
   project: default
   source:
     chart: spring-petclinic
     repoURL: https://rawlingsj.github.io/spring-petclinic
-    targetRevision: 7
+    targetRevision: "7"
   syncPolicy:
     automated:
       prune: true
