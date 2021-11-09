@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-petclinic
+  namespace: default
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    chart: spring-petclinic
+    repoURL: https://rawlingsj.github.io/spring-petclinic
+    targetRevision: 7
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
