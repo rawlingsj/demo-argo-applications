@@ -11,7 +11,7 @@ spec:
   source:
     chart: spring-petclinic
     repoURL: https://rawlingsj.github.io/spring-petclinic
-    targetRevision: "12"
+    targetRevision: "10"
   syncPolicy:
     automated:
       prune: true
